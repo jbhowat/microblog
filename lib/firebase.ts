@@ -17,6 +17,22 @@ if (!firebase.apps.length) {
 	firebase.initializeApp(firebaseConfig);
 }
 
+export async function getUserWithUsername(username: string) {
+	const usersRef = firestore.collection('users');
+	const query = usersRef.where('username', '==', username).limit(1);
+	const userDoc = (await query.get()).docs[0];
+	return userDoc;
+}
+
+export async function postToJSON(doc: firebase.firestore.DocumentData) {
+	const data = doc.data();
+	return {
+		...data,
+		createAt: data.createAt.toMillis(),
+		updateAt: data.updateAt.toMillis(),
+	};
+}
+
 export const auth = firebase.auth();
 export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
