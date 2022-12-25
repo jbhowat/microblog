@@ -119,7 +119,7 @@ function UsernameMessage({ username, isValid, loading }: { username: string; isV
 	} else if (isValid) {
 		return <p className='text-success'>{username} is available!</p>;
 	} else if (username && !isValid) {
-		return <p className='text-danger'>That username is taken!</p>;
+		return <p className='text-danger'>That username is not available!</p>;
 	} else {
 		return <p></p>;
 	}
