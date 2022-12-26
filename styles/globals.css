@@ -87,6 +87,7 @@ code {
 .navbar img {
   border-radius: 50%;
   width: 50px;
+	min-width: 50px;
   height: 50px;
   cursor: pointer;
 }
@@ -122,6 +123,20 @@ code {
   }
 }
 
+@media only screen and (max-width: 425px) {
+  button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.5rem;
+  }
+	.navbar img {
+		border-radius: 50%;
+		width: 30px;
+		min-width: 30px;
+		height: 30px;
+		cursor: pointer;
+	}
+
+}
 
 button:hover {
   filter: brightness(90%);
@@ -161,7 +176,6 @@ button.btn-google {
 button.btn-logo {
   background-color: var(--color-text);
   color: white;
-  text-transform: uppercase;
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
 }

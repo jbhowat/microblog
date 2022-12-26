@@ -23,7 +23,7 @@ export default function Navbar(): JSX.Element {
             <ul>
                 <li>
                     <Link passHref={true} href="/">
-                        <button className="btn-logo">smolFeed</button>
+                        <button className="btn-logo">smolFEED</button>
                     </Link>
                 </li>
 
