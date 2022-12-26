@@ -24,17 +24,19 @@ export async function getUserWithUsername(username: string) {
 	return userDoc;
 }
 
-export async function postToJSON(doc: firebase.firestore.DocumentData) {
-	const data = doc.data();
-	return {
-		...data,
-		createAt: data.createAt.toMillis(),
-		updateAt: data.updateAt.toMillis(),
-	};
-}
-
 export const auth = firebase.auth();
 export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
 export const firestore = firebase.firestore();
 export const storage = firebase.storage();
+
+export async function postToJSON(doc: any) {
+	const data = doc.data();
+	console.log('postToJson', data);
+	console.log('toMillis', data.createdAt.toMillis());
+	return {
+		...data,
+		createdAt: data?.createdAt.toMillis() || 0,
+		updatedAt: data?.updatedAt.toMillis() || 0,
+	};
+}
