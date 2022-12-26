@@ -30,7 +30,7 @@ export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 export const firestore = firebase.firestore();
 export const storage = firebase.storage();
 
-export async function postToJSON(doc: any) {
+export async function postToJSON(doc) {
 	const data = doc.data();
 	console.log('postToJson', data);
 	console.log('toMillis', data.createdAt.toMillis());
