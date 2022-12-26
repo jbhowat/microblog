@@ -35,9 +35,6 @@ function SignInButton(): JSX.Element {
                 <Img alt="Sign in with Google" src={'/google.png'} width="30" height="30" />
                 Sign in with Google
             </button>
-            <button onClick={() => signInAnonymously(auth)}>
-                Sign in Anonymously
-            </button>
         </>
     );
 }
