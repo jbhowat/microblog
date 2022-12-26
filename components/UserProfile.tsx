@@ -1,13 +1,13 @@
-import React from 'react';
+import Img from 'next/image';
 
-export default function UserProfile({ user }) {
-	return (
-		<div className="box-center">
-			<img src={user.photoURL || '/hacker.png'} className="card-img-center" />
-			<p>
-				<i>@{user.username}</i>
-			</p>
-			<h1>{user.displayName || 'Anonymous User'}</h1>
-		</div>
-	);
+export default function UserProfile({ user }: { user: any }) {
+  return (
+    <div className="box-center">
+      <Img alt={user.displayName} src={user.photoURL || '/hacker.png'} width={150} height={150} objectFit="cover" className="card-img-center" />
+      <p>
+        <i>@{user.username}</i>
+      </p>
+      <h1>{user.displayName || 'Anonymous User'}</h1>
+    </div>
+  );
 }
