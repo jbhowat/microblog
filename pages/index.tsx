@@ -67,7 +67,7 @@ const Home: NextPage = (props: any) => {
 
       <div className="card card-info">
         <h2>Welcome to the smolFeed Demo</h2>
-        <p>A tiny social media app built using Nex.js and Firebase.</p>
+        <p>A tiny social media app built using Next.js and Firebase.</p>
 				<p>Create an account and start posting, but please remember that this site is a beta version, so posts and accounts may not persist forever</p>
       </div>
 
